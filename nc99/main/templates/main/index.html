@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}nc99 Minecraft Server{% endblock %}
+{% block subtitle %}A small community server{% endblock %}
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        Featured
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Now accepting whitelist applications</h4>
+        <p class="card-text">Apply to be whitelisted on the private survival vanilla server. Join a friendly community of experienced players on a world we've been working on for over a year.</p>
+        <a href="{% url 'apply:index' %}" class="btn btn-primary">Apply Now</a>
+    </div>
+</div>
+{% endblock %}

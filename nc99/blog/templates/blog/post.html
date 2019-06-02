@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block jumbotron %}{% endblock %}
+{% block content %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'main:index' %}">nc99 Server</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'blog:index' %}">Blog</a></li>
+        <li class="breadcrumb-item active">{{ post.title }}</li>
+    </ol>
+    <h1 class="display-4">{{ post.title }}</h1>
+    <h4>by {{ post.author }} <small class="text-muted">{{ post.timestamp }}</small></h4>
+    <br>
+    <p class="text-justify">{{ post.body }}</p>
+    <br>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Status{% endblock %}
+{% block content %}
+<table class="table table-hover">
+    <thead class="thead-default">
+        <tr>
+            <th>Server Name</th>
+            <th>IP Address</th>
+            <th>Status</th>
+            <th>Version</th>
+            <th>Players</th>
+            <th>Message</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for server in servers %}
+        <tr>
+            <td>{{ server.server.name }}</td>
+            <td>{{ server.server.ip }}</td>
+            <td>{% if server.status %} Online {% else %} Offline {% endif %}</td>
+            <td>{{ server.status.version.name }}</td>
+            {% if server.status %}
+                <td>{{ server.status.players.online }} / {{ server.status.players.max }}</td>
+            {% else %}
+                <td></td>
+            {% endif %}
+            <td>{{ server.motd }}</td>
+        <tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
